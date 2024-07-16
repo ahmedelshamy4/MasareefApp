@@ -8,7 +8,6 @@ import 'package:masareef_app/expenses/presentation/add_expense_page.dart';
 import 'package:masareef_app/expenses/presentation/expense_details_page.dart';
 import 'package:masareef_app/expenses/presentation/manager/expense_cubit.dart';
 import 'package:masareef_app/expenses/presentation/manager/expense_state.dart';
-
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
