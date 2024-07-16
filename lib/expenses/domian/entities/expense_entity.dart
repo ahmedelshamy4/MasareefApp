@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-import 'package:masareef_app/expenses/domian/entities/inputs/expense_input.dart';
 
 class ExpenseEntity extends Equatable {
   final int id;

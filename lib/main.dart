@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:masareef_app/core/app_injector.dart';
 import 'package:masareef_app/core/theme/app_colors.dart';
 import 'package:masareef_app/core/theme/app_theme.dart';
@@ -22,9 +21,8 @@ class MyApp extends StatelessWidget {
       create: (context) => ExpenseCubit()..onCubitCreated(),
       child: MaterialApp(
         color: AppColors.white,
-
         title: 'Masareef App',
-        theme:AppTheme.lightTheme,
+        theme: AppTheme.lightTheme,
         debugShowCheckedModeBanner: false,
         home: const HomePage(),
       ),

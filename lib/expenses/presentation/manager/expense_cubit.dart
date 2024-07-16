@@ -61,4 +61,28 @@ class ExpenseCubit extends Cubit<ExpenseState> {
       emit(state.reduce(deleteExpensesState: Async.failure(e.toString())));
     }
   }
+
+  void filterExpenses(String query) {
+    final filteredExpenses = state.getExpensesState.data?.where((expense) =>
+      expense.title.toLowerCase().contains(query.toLowerCase()) ||
+      expense.amount.toString().toLowerCase().contains(query.toLowerCase())
+    ).toList();
+    emit(state.reduce(getExpensesState: Async.success(filteredExpenses ?? [])));
+  }
+
+  void sortExpensesByDate() {
+    final sortedExpenses = state.getExpensesState.data;
+    sortedExpenses?.sort(
+      (a, b) => b.date.compareTo(a.date),
+    );
+    emit(state.reduce(getExpensesState: Async.success(sortedExpenses ?? [])));
+  }
+
+  void sortExpensesByAmount() {
+    final sortedExpenses = state.getExpensesState.data;
+    sortedExpenses?.sort(
+      (a, b) => b.amount.compareTo(a.amount),
+    );
+    emit(state.reduce(getExpensesState: Async.success(sortedExpenses ?? [])));
+  }
 }
