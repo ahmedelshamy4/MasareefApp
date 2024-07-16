@@ -2,6 +2,16 @@ import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
 class ExpenseLocalDataSource {
+  //todo:As singleton constructor to create one object on memory
+  ExpenseLocalDataSource._internal();
+
+  static final ExpenseLocalDataSource _instance =
+      ExpenseLocalDataSource._internal();
+
+  factory ExpenseLocalDataSource() {
+    return _instance;
+  }
+
   static Database? _database;
 
   Future<Database> _initDatabase() async {
