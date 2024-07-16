@@ -2,15 +2,6 @@ import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
 class ExpenseLocalDataSource {
-  ExpenseLocalDataSource._internal();
-
-  static final ExpenseLocalDataSource _instance =
-      ExpenseLocalDataSource._internal();
-
-  factory ExpenseLocalDataSource() {
-    return _instance;
-  }
-
   static Database? _database;
 
   Future<Database> _initDatabase() async {

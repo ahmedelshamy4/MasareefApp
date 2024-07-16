@@ -53,7 +53,6 @@ class _HomePageState extends State<HomePage> {
             },
             icon: const Icon(Icons.sort_by_alpha),
           ),
-          //sortExpensesByDate
           IconButton(
             icon: const Icon(Icons.sort),
             onPressed: () {
@@ -77,7 +76,6 @@ class _HomePageState extends State<HomePage> {
                     if(_searchController.text.isNotEmpty){
                       _onSearchChanged();
                     }else{
-                      print('else.....');
                       ExpenseCubit.of(context).getExpenses();
                     }
                   },

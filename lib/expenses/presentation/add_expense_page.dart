@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:masareef_app/core/widgets/appbar/app_bar.dart';
 import 'package:masareef_app/core/widgets/basic_app_button/basic_app_button.dart';
@@ -43,7 +44,7 @@ class _AddExpensePageState extends State<AddExpensePage> {
         title: Text('Add Expense'),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 16),
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 16),
         child: BlocListener<ExpenseCubit, ExpenseState>(
           listener: (context, state) {
             if (state.addExpensesState.isSuccess) {
@@ -78,15 +79,12 @@ class _AddExpensePageState extends State<AddExpensePage> {
                 ),
                 const SizedBox(height: 16),
                 TextFormField(
+                  inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                   decoration: const InputDecoration(labelText: 'Amount'),
                   keyboardType: TextInputType.number,
                   controller: _amountTextEditingController,
                 ),
                 const SizedBox(height: 20),
-                // ElevatedButton(
-                //   onPressed: _onAddExpensePressed,
-                //   child: const Text('Add Expense'),
-                // ),
                 BasicAppButton(
                   onPressed: _onAddExpensePressed,
                   title: "Add Expense",
