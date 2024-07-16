@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class BasicAppbar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? title;
-  final Widget? action;
+  final List<Widget>? action;
   final Color? backgroundColor;
   final bool hideBack;
   final VoidCallback? onPressed;
@@ -22,7 +22,7 @@ class BasicAppbar extends StatelessWidget implements PreferredSizeWidget {
       elevation: 0,
       centerTitle: true,
       title: title ?? const Text(''),
-      actions: [action ?? Container()],
+      actions: action,
       leading: hideBack
           ? null
           : IconButton(
