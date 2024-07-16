@@ -8,7 +8,6 @@ import 'package:masareef_app/expenses/presentation/add_expense_page.dart';
 import 'package:masareef_app/expenses/presentation/expense_details_page.dart';
 import 'package:masareef_app/expenses/presentation/manager/expense_cubit.dart';
 import 'package:masareef_app/expenses/presentation/manager/expense_state.dart';
-
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -53,7 +52,6 @@ class _HomePageState extends State<HomePage> {
             },
             icon: const Icon(Icons.sort_by_alpha),
           ),
-          //sortExpensesByDate
           IconButton(
             icon: const Icon(Icons.sort),
             onPressed: () {
@@ -77,7 +75,6 @@ class _HomePageState extends State<HomePage> {
                     if(_searchController.text.isNotEmpty){
                       _onSearchChanged();
                     }else{
-                      print('else.....');
                       ExpenseCubit.of(context).getExpenses();
                     }
                   },
